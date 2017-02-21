@@ -50,7 +50,10 @@ unchanged. -}
 remRunnerUp :: [Int] -> [Int]
 remRunnerUp [] = []
 remRunnerUp [x] = [x]
-remRunnerUp (x:xs)
-  -- if head matches second largest element, exclude it, and return rest of the list
-  | x == (sort (x:xs) !! (length (x:xs) - 2)) = xs
-  | otherwise = x:(remRunnerUp xs)
+-- aux function so that, sort always takes original list l
+remRunnerUp l = aux l
+  where
+  aux (x:xs)
+    -- if head matches 2nd largest element, exclude it, return rest of the list
+    | x == (sort l !! (length l - 2)) = xs
+    | otherwise = x:(aux xs)
