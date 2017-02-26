@@ -16,6 +16,7 @@ expressed  as a sum of two cubes in at least two different ways.
 Examples:
 ramanujan 1 = 1729
 ramanujan 4 = 20683
+Help: http://notes-on-haskell.blogspot.in/2007/12/taxicab-numbers.html?showComment=1198855380000#c3099568420686482672
 -}
 
 ramanujan :: Int -> Int
