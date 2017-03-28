@@ -8,8 +8,8 @@
     Line 2
     EOF
   your program should output:
-    1 eniL
     2 eniL
+    1 eniL
 
   Test Case 2:
     Functional programming is an
@@ -17,16 +17,16 @@
     programming paradigm.
     EOF
   Output:
-    na si gnimmargorp lanoitcnuF
-    lufrewop dna esicnoc ,tnagele
     .mgidarap gnimmargorp
+    lufrewop dna esicnoc ,tnagele
+    na si gnimmargorp lanoitcnuF
 -}
 
-import System.Exit
-main = do
+main = g []
+  where
+  g xs = do
     line <- getLine
     if line == "EOF"
-        then exitSuccess
-    else do
-        putStrLn (reverse line)
-        main
+      then putStr (unlines xs)
+    else
+      g ((reverse line):xs)
